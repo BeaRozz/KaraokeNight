@@ -99,7 +99,6 @@ function draw() {
     SongButtons.hide();
 
     SongDuration += - 1;
-    console.log(SongDuration);
 
     if(player.isTouching(GnotesGroup)){
       GoodNotes += 1
@@ -136,9 +135,9 @@ function draw() {
     if(mousePressedOver(ToSelect)){
       restart();
     }
-
   }
-
+  
+  console.log(SongDuration)
   drawSprites();
 }
 
@@ -182,5 +181,10 @@ function spawner(){
 
 function restart(){
   ToSelect.visible = false;
+  GoodNotes = 0;
+  BadNotes = 0;
   gameState = SELECT;
+  SongDuration = 0;
+  SongButtons = new Buttons;
+  SongButtons.display();
 }
